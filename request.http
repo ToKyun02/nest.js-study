@@ -1,2 +1,9 @@
-### get /compute
-GET http://localhost:3000/computer
+### signup
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email" : "test@na.com",
+  "password" : "pasdfsdf",
+  "test" : "test"
+}
