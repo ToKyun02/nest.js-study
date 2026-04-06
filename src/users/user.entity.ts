@@ -1,5 +1,11 @@
-import { AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Exclude } from 'class-transformer';
+import {
+  AfterInsert,
+  AfterRemove,
+  AfterUpdate,
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class User {
@@ -10,7 +16,6 @@ export class User {
   email: string;
 
   @Column()
-  @Exclude()
   password: string;
 
   @AfterInsert()
@@ -20,11 +25,11 @@ export class User {
 
   @AfterUpdate()
   logUpdate() {
-    console.log('updated user with id', this.id);
+    console.log('Updated User with id', this.id);
   }
 
   @AfterRemove()
   logRemove() {
-    console.log('removed user with id', this.id);
+    console.log('Removed User with id', this.id);
   }
 }
